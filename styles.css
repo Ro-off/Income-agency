@@ -20,8 +20,28 @@ body{
     display: grid; 
     grid-template-columns: 1fr; 
     grid-template-rows: 6vh auto;
-    font-family: 'MacPawFixelDisplayLight' , sans-serif;
+    font-family: 'MacPawFixelDisplayRegular' , sans-serif;
 }
+
+.button1{
+    background-color: var(--accent-bg-color);
+    color: var(--accent-color-2);
+    border: none;
+    padding: 5px 20px 5px 20px;
+    border-radius: 50px;
+    font-size: 1em;
+    font-family: 'MacPawFixelDisplayRegular' , sans-serif;
+    cursor: pointer;
+    outline: var(--accent-color-2) 1px solid;
+    transition: 0.2s;
+}
+
+.button1:hover{
+    filter: brightness(1.1);
+}
+
+/*q: Why is hoe not working? */
+/*a: https://stackoverflow.com/questions/10523415/css-hover-not-working */  
 
 header{
     display: grid;
@@ -38,19 +58,32 @@ header{
     flex-wrap: nowrap;
 }
 
+/*TODO: maybe flex with padding a little bit*/
+#right-header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 60px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
 /*TODO: make logo svg and with more adaptive position*/
 .logo{
-    margin-top: -4px;
+    margin-top: 0px;
     height: 80%;
     object-fit: contain;
 }   
 
+/*TODO: make name more adaptive and less shitcoded*/
 .name{
     color: var(--accent-color-1);
-    font-size: 2.5em;
+    font-size: 2.0em;
     margin: 0;
     padding: 0;
     text-align: center;
+    font-family: 'MacPawFixelDisplayThin' , sans-serif;
+    margin-top: 5px;
 }
 
 main{
