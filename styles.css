@@ -1,0 +1,92 @@
+/*q: How to create css variables */
+/*a: https://www.w3schools.com/css/css3_variables.asp */
+
+:root {
+    --clear-bg-color: #ffffff;
+    --accent-bg-color: #EAF2FF;
+    --accent-color-1: #B4DDFF;
+    --accent-color-2: #7FACD2;
+}
+
+/*include all fonts from .\fonts\MacPawFixelDisplay\Web-PS\*/
+
+
+body{
+    background-color: var(--clear-bg-color);
+    height: 100vh;
+    /*block scroll bar*/
+    margin: 0;
+    overflow: hidden;
+    display: grid; 
+    grid-template-columns: 1fr; 
+    grid-template-rows: 6vh auto;
+    font-family: 'MacPawFixelDisplayLight' , sans-serif;
+}
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+}
+
+#left-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+/*TODO: make logo svg and with more adaptive position*/
+.logo{
+    margin-top: -4px;
+    height: 80%;
+    object-fit: contain;
+}   
+
+.name{
+    color: var(--accent-color-1);
+    font-size: 2.5em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+main{
+    background-color: var(--accent-bg-color);
+    overflow: hidden;
+    border-radius: 50px 50px 0 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+#right-main-screen{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.map{
+    background-color: var(--clear-bg-color);
+    border-radius: 50px;
+    margin: auto;
+    outline: var(--accent-color-1) 5px solid;
+    height: 95%;
+    width: 95%;
+    overflow: hidden;
+}
+
+
+/* TODO: make map responsive */
+.map img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+
