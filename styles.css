@@ -144,6 +144,31 @@ main{
     grid-template-columns: 1fr;
     grid-template-rows: 4fr max-content max-content max-content;
     overflow: hidden;
+    transform: scale(1); 
+  }
+  
+  /* определяем анимацию */
+  @keyframes bounce {
+    0% {
+      transform: scale(1); /* начальный размер элемента */
+      filter: brightness(1.0);
+    }
+    50% {
+      transform: scale(1.06); /* увеличиваем размер элемента до 1.3 */
+      filter: brightness(1.06);
+    }
+    100% {
+      transform: scale(1.05); /* возвращаем элемент к размеру 1.2 */
+      filter: brightness(1.04);
+    }
+  }
+
+.container-desk-object:hover{
+    filter: brightness(1.04);
+    animation-name: bounce;
+    animation-duration: 0.3s;
+    transform: scale(1.05);
+    
 }
 
 .container-desk-object-img{
