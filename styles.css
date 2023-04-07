@@ -19,7 +19,7 @@ body{
     overflow: hidden;
     display: grid; 
     grid-template-columns: 1fr; 
-    grid-template-rows: 6vh auto;
+    grid-template-rows: 8vh auto;
     font-family: 'MacPawFixelDisplayRegular' , sans-serif;
 }
 
@@ -34,6 +34,12 @@ body{
     cursor: pointer;
     outline: var(--accent-color-2) 1px solid;
     transition: 0.2s;
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    
 }
 
 .button1:hover{
@@ -93,6 +99,50 @@ main{
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
+    outline: var(--accent-color-1) 2px solid;
+}
+
+#left-main-screen{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    overflow: auto;
+
+}
+
+/* custom scrollbar */
+::-webkit-scrollbar {
+    width: 20px;
+    }
+
+    ::-webkit-scrollbar-track {
+    background-color: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+    background-color: var(--accent-color-1);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+    }
+
+    ::-webkit-scrollbar-thumb:hover {
+    background-color: var(--accent-color-2);
+    }
+
+
+
+.container-desk-object{
+    max-width: 40vmin;
+    min-width: 25vh;
+    max-height: 50vmin;
+    min-height: 30vh;
+    background-color: var(--clear-bg-color);
+    border-radius: 40px;
+    margin: 10px;
+    outline: var(--accent-color-1) 4px solid;
 }
 
 #right-main-screen{
