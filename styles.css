@@ -1,14 +1,11 @@
-/*q: How to create css variables */
-/*a: https://www.w3schools.com/css/css3_variables.asp */
 
 :root {
     --clear-bg-color: #ffffff;
     --accent-bg-color: #EAF2FF;
     --accent-color-1: #B4DDFF;
     --accent-color-2: #7FACD2;
+    --contrast-color-1: #4a6880;
 }
-
-/*include all fonts from .\fonts\MacPawFixelDisplay\Web-PS\*/
 
 
 body{
@@ -17,8 +14,8 @@ body{
     /*block scroll bar*/
     margin: 0;
     overflow: hidden;
-    display: grid; 
-    grid-template-columns: 1fr; 
+    display: grid;
+    grid-template-columns: 1fr;
     grid-template-rows: 8vh auto;
     font-family: 'MacPawFixelDisplayRegular' , sans-serif;
 }
@@ -27,9 +24,9 @@ body{
     background-color: var(--accent-bg-color);
     color: var(--accent-color-2);
     border: none;
-    padding: 5px 20px 5px 20px;
+    padding: 8px 20px 5px 20px;
     border-radius: 50px;
-    font-size: 1em;
+    font-size: 1.3em;
     font-family: 'MacPawFixelDisplayRegular' , sans-serif;
     cursor: pointer;
     outline: var(--accent-color-2) 1px solid;
@@ -46,8 +43,6 @@ body{
     filter: brightness(1.1);
 }
 
-/*q: Why is hoe not working? */
-/*a: https://stackoverflow.com/questions/10523415/css-hover-not-working */  
 
 header{
     display: grid;
@@ -102,6 +97,7 @@ main{
     outline: var(--accent-color-1) 2px solid;
 }
 
+/*TODO: fix big space between objects rows*/
 #left-main-screen{
     display: flex;
     justify-content: center;
@@ -109,7 +105,6 @@ main{
     flex-wrap: wrap;
     padding: 20px;
     overflow: auto;
-
 }
 
 /* custom scrollbar */
@@ -133,17 +128,129 @@ main{
     }
 
 
-
+/*TODO: fix adaptive cards*/
 .container-desk-object{
     max-width: 40vmin;
+    width: min-content;
     min-width: 25vh;
     max-height: 50vmin;
+    height: min-content;
     min-height: 30vh;
     background-color: var(--clear-bg-color);
     border-radius: 40px;
     margin: 10px;
-    outline: var(--accent-color-1) 4px solid;
+    outline: var(--accent-color-1) 3px solid;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr max-content max-content max-content;
+    overflow: hidden;
 }
+
+.container-desk-object-img{
+    overflow: hidden;
+    outline: var(--accent-color-1) 2px solid;
+}
+
+.container-desk-object-img img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+}
+
+.container-desk-object-description{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    background-color: var(--clear-bg-color);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container-desk-object-description div{
+    overflow: hidden;
+}
+
+.container-desk-object-description > :nth-child(1), :nth-child(3){
+    /* text-align: left;
+    margin-left: 10px; */
+    text-align: center;
+}
+
+.container-desk-object-description > :nth-child(2), :nth-child(4){
+    /* text-align: left; */
+    text-align: center;
+}
+
+/*TODO: fix adaptive font*/
+.container-desk-object-description div p{
+    margin: 0;
+    padding: 0;
+    font-size: 0.55em;
+    font-family: 'MacPawFixelDisplayMedium' , sans-serif;
+    color: var(--contrast-color-1);
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container-desk-object-address{
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-size: 0.75em;
+    font-family: 'MacPawFixelDisplayRegular' , sans-serif;
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    background-color: var(--clear-bg-color);
+    margin: 0;
+    height: min-content;
+    border-bottom: var(--accent-color-1) 2px solid;
+    border-top: var(--accent-color-1) 2px solid;
+    background-color: var(--clear-bg-color);
+    
+}
+
+/*TODO: fix adaptive font*/
+.container-desk-object-address p{
+    font-family: 'MacPawFixelDisplaySemiBold' , sans-serif;
+    margin: 0px;
+    padding: 0;
+    color: var(--contrast-color-1);
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 3px;
+}
+
+.container-desk-object-price{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.4em;
+    font-family: 'MacPawFixelDisplayBold' , sans-serif;
+    width: 100%;
+    margin:0;
+}
+
+/*TODO: fix adaptive font*/
+.container-desk-object-price p{
+    margin: auto;
+    color: var(--contrast-color-1);
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+
 
 #right-main-screen{
     display: grid;
