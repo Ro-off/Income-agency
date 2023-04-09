@@ -248,7 +248,7 @@ main{
     animation-name: bounce;
     animation-duration: 0.3s;
     transform: scale(1.05);
-    
+    cursor: pointer;
 }
 
 .container-desk-object-img{
@@ -304,22 +304,14 @@ main{
     text-align: center;
     display: inline-block;
     white-space: nowrap;
-    margin-left: 10px;
-    margin-right: 10px;
-    margin-top: 15px;
-    margin-bottom: 15px;
     font-size: 0.75em;
     font-family: 'MacPawFixelDisplayRegular' , sans-serif;
     width: 100%;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    background-color: var(--clear-bg-color);
     margin: 0;
     height: min-content;
     border-bottom: var(--accent-color-1) 2px solid;
     border-top: var(--accent-color-1) 2px solid;
     background-color: var(--clear-bg-color);
-    
 }
 
 /*TODO: fix adaptive font*/
