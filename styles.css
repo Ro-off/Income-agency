@@ -42,6 +42,28 @@ body{
     
 }
 
+.close-button{
+    border-radius: 50px;
+    font-size: 1.6em;
+    outline: var(--accent-color-1) 4px solid;
+    width: 1.7em;
+    height: 1.7em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--accent-bg-color);
+    cursor: pointer;
+}
+
+.close-button:hover{
+    filter: brightness(1.03);
+}
+
+.close-button i{
+    color: var(--accent-color-1);
+    -webkit-text-stroke: 0.5px var(--accent-color-2);
+}
+
 .button1:hover{
     filter: brightness(1.1);
 }
@@ -97,14 +119,14 @@ header{
     justify-content: center;
     flex-direction: column;
     background-color: var(--accent-bg-color);
-    border-radius: 50px;
-    outline: var(--accent-color-1) 5px solid;
+    border-radius: 30px;
+    outline: var(--accent-color-1) 4px solid;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 10px;
     padding-bottom: 10px;
-    top: 9vh;
-    right: 20px;
+    top: 12vh;
+    right: 28px;
 
 }
 
@@ -119,23 +141,24 @@ header{
     background-color: var(--clear-bg-color);
     border-radius: 50px;
     outline: var(--clear-bg-color) 6px solid;
-    margin-top: 12px;
-    margin-bottom: 12px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
 }
 
 .container-call-sample p{
  margin-left: 20px;
  margin-right: 20px;
- margin-top: 7px;
- margin-bottom: 4px;
- font-size: 1.5em;
+ margin-top: 3px;
+ margin-bottom: 1px;
+ font-size: 1em;
  width: 100%;
  text-align: center;
  /* margin: 10px; */
 }
 
 .container-call-sample i{
-    font-size: 2em;
+    font-size: 1.3em;
     padding: 0.3em;
    }
 
@@ -163,6 +186,13 @@ header{
 #container-call .container-call-sample .fa-telegram{
     background-color: var(--telegram-button-color);
 }
+
+#container-call .close-button{
+    position: absolute;
+    bottom: -37px;
+    left: -37px;
+}
+
 
 
 
