@@ -5,6 +5,9 @@
     --accent-color-1: #B4DDFF;
     --accent-color-2: #7FACD2;
     --contrast-color-1: #4a6880;
+    --call-button-color: #B3EB7A;
+    --viber-button-color: #c194df;
+    --telegram-button-color: #90c9ed;
 }
 
 
@@ -86,6 +89,83 @@ header{
     font-family: 'MacPawFixelDisplayThin' , sans-serif;
     margin-top: 5px;
 }
+
+#container-call{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--accent-bg-color);
+    border-radius: 50px;
+    outline: var(--accent-color-1) 5px solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 9vh;
+    right: 20px;
+
+}
+
+.container-call-sample{
+    height: 100%;
+    width: 100%;
+    /* object-fit: contain; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: var(--clear-bg-color);
+    border-radius: 50px;
+    outline: var(--clear-bg-color) 6px solid;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.container-call-sample p{
+ margin-left: 20px;
+ margin-right: 20px;
+ margin-top: 7px;
+ margin-bottom: 4px;
+ font-size: 1.5em;
+ width: 100%;
+ text-align: center;
+ /* margin: 10px; */
+}
+
+.container-call-sample i{
+    font-size: 2em;
+    padding: 0.3em;
+   }
+
+.container-call-sample :nth-child(1){
+    border-radius: 50px;
+    /* background-color: rgb(179, 235, 122); */
+    color: var(--clear-bg-color);
+}
+
+.container-call-sample :nth-child(3){
+    border-radius: 0px 50px 50px 0px;
+    padding-left: 0.6em;
+    border-left: 1px solid var(--contrast-color-1);
+    color: var(--contrast-color-1);
+}
+
+#container-call .container-call-sample .fa-phone{
+    background-color: var(--call-button-color);
+}
+
+#container-call .container-call-sample .fa-viber{
+    background-color: var(--viber-button-color);
+}
+
+#container-call .container-call-sample .fa-telegram{
+    background-color: var(--telegram-button-color);
+}
+
+
+
 
 main{
     background-color: var(--accent-bg-color);
