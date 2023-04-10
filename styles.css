@@ -155,7 +155,7 @@ header{
 .container-call-sample{
     height: 100%;
     width: 100%;
-    /* object-fit: contain; */
+    object-fit: contain;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -168,7 +168,18 @@ header{
     cursor: pointer;
 }
 
+.container-call-sample a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+}
+
 .container-call-sample p{
+color: var(--contrast-color-1);
  margin-left: 20px;
  margin-right: 20px;
  margin-top: 3px;
@@ -190,7 +201,7 @@ header{
     color: var(--clear-bg-color);
 }
 
-.container-call-sample :nth-child(3){
+.container-call-sample > :nth-child(2){
     border-radius: 0px 50px 50px 0px;
     padding-left: 0.6em;
     border-left: 1px solid var(--contrast-color-1);
