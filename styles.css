@@ -53,10 +53,21 @@ body{
     justify-content: center;
     background-color: var(--accent-bg-color);
     cursor: pointer;
+
+    transition: 0.2s;
+    transition-property: transform, filter;
+    transform: rotate(0deg);
+
+    -webkit-tap-highlight-color: transparent;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 .close-button:hover{
     filter: brightness(1.03);
+    transform: rotate(360deg);
 }
 
 .close-button i{
@@ -112,9 +123,16 @@ header{
     margin-top: 5px;
 }
 
+.contact-menu--open{
+    transform: translateY(0%) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
 #container-call{
     position: absolute;
     display: flex;
+    visibility: hidden;
     align-items: center;
     justify-content: center;
     flex-direction: column;
@@ -128,6 +146,10 @@ header{
     top: 12vh;
     right: 28px;
 
+    transform: translateY(-10%);
+    opacity: 0;
+    transition-duration: 0.3s;
+    transition-property: transform, opacity,visibility;
 }
 
 .container-call-sample{
@@ -240,7 +262,7 @@ main{
     }
 
 
-    
+
     /* * Firefox scrollbar version */
   * {
     scrollbar-width: thin;
@@ -437,3 +459,6 @@ main{
 }
 
 
+.menu--open{
+    display: flex !important;
+}
