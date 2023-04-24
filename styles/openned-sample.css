@@ -1,9 +1,67 @@
-/* .opened-sample-container{
+.opened-sample-container{
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    right: 0;
+    bottom: 0;
     height: 100%;
-    background-color: var(--clear-bg-color);
+    width: auto;
+    background-color: var(--accent-bg-color);
+    padding-left: 25px;
+    padding-top: 8px;
+    overflow-y: scroll;
+}
 
-    } */
+.opened-sample-imgs{
+    height: 60%;
+    width: auto;
+    /* background-color: firebrick; */
+    justify-self: center;
+}
+
+.opened-sample-details{
+    height: 25%;
+    width: auto;
+    /* background-color: rebeccapurple; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+}
+
+.opened-sample-price-full{
+    font-size: 3.5em;
+    font-family: 'MacPawFixelDisplaySemiBold' , sans-serif;
+    margin-bottom: 0;
+    line-height: 1em;
+}
+
+.opened-sample-price-full::after{
+    content: "$";   
+}
+
+.opened-sample-price-per-meter{
+    font-size: 1.5em;
+    font-family: 'MacPawFixelDisplaylight' , sans-serif;
+    margin-top: 0;
+    color: var(--contrast-color-1);
+}
+
+.opened-sample-price-per-meter::after{
+    content: "$ / m²";   
+}
+
+.opened-sample-address{
+    font-size: 1.5em;
+    text-align: left;
+    font-family: 'MacPawFixelDisplayLight' , sans-serif;
+    margin-top: 30px;
+}
+
+.opened-sample-description{
+    height: max-content;
+    width: auto;
+    /* background-color: royalblue; */
+    text-align: left;
+    margin-top: 50px;
+}
+
