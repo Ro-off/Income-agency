@@ -1,0 +1,22 @@
+body{
+    background-color: var(--clear-bg-color);
+    height: 100vh; 
+    /*block scroll bar*/
+    margin: 0;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 8vh auto;
+    font-family: 'MacPawFixelDisplayRegular' , sans-serif;
+}
+
+main{
+    background-color: var(--accent-bg-color);
+    overflow: hidden;
+    border-radius: 50px 50px 0 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 100%;
+    outline: var(--accent-color-1) 2px solid;
+    height: auto;
+}

@@ -13,7 +13,7 @@
 
 body{
     background-color: var(--clear-bg-color);
-    height: 100vh;
+    height: 100vh; 
     /*block scroll bar*/
     margin: 0;
     overflow: hidden;
@@ -40,6 +40,10 @@ body{
     -ms-user-select: none;
     user-select: none;
     
+}
+
+.button1:hover{
+    filter: brightness(1.1);
 }
 
 .close-button{
@@ -75,9 +79,7 @@ body{
     -webkit-text-stroke: 0.5px var(--accent-color-2);
 }
 
-.button1:hover{
-    filter: brightness(1.1);
-}
+
 
 
 header{
@@ -177,11 +179,13 @@ header{
     height: 100%;
     flex-direction: row;
     transition: 0.2s;
-    outline: var(--clear-bg-color) 6px solid;
+    transition-property: background-color, transform;
+    /* outline: var(--clear-bg-color) 6px solid; */
+    /* border-left: var(--clear-bg-color) 6px solid; */
 }
 
 .container-call-sample a:hover {
-  transform: translateX(-5px)
+  /*! transform: translateX(-3px) */
 }
 
 .container-call-sample p{
@@ -213,6 +217,10 @@ color: var(--contrast-color-1);
     border-left: 1px solid var(--contrast-color-1);
     color: var(--contrast-color-1);
     z-index: 2;
+    /* background-color: var(--clear-bg-color); */
+
+    /*! for test, can be broken */
+    /* margin-left: -10px; */
 }
 
 #container-call .container-call-sample .fa-phone{
@@ -245,19 +253,31 @@ main{
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr;
     outline: var(--accent-color-1) 2px solid;
+    height: auto;
 }
 
-/*TODO: fix big space between objects rows*/
 #left-main-screen{
+
+
+} 
+
+#left-main-screen-container{
     display: flex;
     justify-content: center;
     flex-direction: row;
     flex-wrap: wrap;
     padding: 20px;
     overflow: auto;
-}
+} 
 
-
+.opened-sample-container{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--clear-bg-color);
+    }
 
 /* * Chrome scrollbar version */
 ::-webkit-scrollbar {
@@ -445,6 +465,8 @@ main{
     margin-top: 5px;
     margin-bottom: 5px;
 }
+
+
 
 
 

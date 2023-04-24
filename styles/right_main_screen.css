@@ -1,0 +1,28 @@
+
+#right-main-screen{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    height: 100%;
+    width: 100%;
+    align-items: center;
+}
+
+.map{
+    background-color: var(--clear-bg-color);
+    border-radius: 50px;
+    margin: auto;
+    outline: var(--accent-color-1) 5px solid;
+    height: 95%;
+    width: 95%;
+    overflow: hidden;
+}
+
+
+/* TODO: make map responsive */
+.map img{
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+

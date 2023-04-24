@@ -1,0 +1,163 @@
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 100%;
+}
+
+#left-header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 20px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+/*TODO: maybe flex with padding a little bit*/
+#right-header{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    padding-right: 60px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+}
+
+/*TODO: make logo svg and with more adaptive position*/
+.logo{
+    margin-top: 0px;
+    height: 80%;
+    object-fit: contain;
+}   
+
+/*TODO: make name more adaptive and less shitcoded*/
+.name{
+    color: var(--accent-color-1);
+    font-size: 2.0em;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'MacPawFixelDisplayThin' , sans-serif;
+    margin-top: 5px;
+}
+
+.contact-menu--open{
+    transform: translateY(0%) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+#container-call{
+    position: absolute;
+    display: flex;
+    visibility: hidden;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--accent-bg-color);
+    border-radius: 30px;
+    outline: var(--accent-color-1) 4px solid;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    top: 12vh;
+    right: 28px;
+
+    transform: translateY(-10%);
+    opacity: 0;
+    transition-duration: 0.3s;
+    transition-property: transform, opacity,visibility;
+}
+
+.container-call-sample{
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    background-color: var(--clear-bg-color);
+    border-radius: 50px;
+    outline: var(--clear-bg-color) 6px solid;
+    margin-top: 8px;
+    margin-bottom: 8px;
+    cursor: pointer;
+}
+
+.container-call-sample a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    width: 100%;
+    height: 100%;
+    flex-direction: row;
+    transition: 0.2s;
+    transition-property: background-color, transform;
+    /* outline: var(--clear-bg-color) 6px solid; */
+    /* border-left: var(--clear-bg-color) 6px solid; */
+}
+
+.container-call-sample a:hover {
+  /*! transform: translateX(-3px) */
+}
+
+.container-call-sample p{
+color: var(--contrast-color-1);
+ margin-left: 20px;
+ margin-right: 20px;
+ margin-top: 3px;
+ margin-bottom: 1px;
+ font-size: 1em;
+ width: 100%;
+ text-align: center;
+ /* margin: 10px; */
+}
+
+.container-call-sample i{
+    font-size: 1.3em;
+    padding: 0.3em;
+   }
+
+.container-call-sample :nth-child(1){
+    border-radius: 50px;
+    /* background-color: rgb(179, 235, 122); */
+    color: var(--clear-bg-color);
+}
+
+.container-call-sample > :nth-child(2){
+    border-radius: 0px 50px 50px 0px;
+    padding-left: 0.6em;
+    border-left: 1px solid var(--contrast-color-1);
+    color: var(--contrast-color-1);
+    z-index: 2;
+    /* background-color: var(--clear-bg-color); */
+
+    /*! for test, can be broken */
+    /* margin-left: -10px; */
+}
+
+#container-call .container-call-sample .fa-phone{
+    background-color: var(--call-button-color);
+}
+
+#container-call .container-call-sample .fa-viber{
+    background-color: var(--viber-button-color);
+}
+
+#container-call .container-call-sample .fa-telegram{
+    background-color: var(--telegram-button-color);
+}
+
+#container-call .close-button{
+    position: absolute;
+    bottom: -37px;
+    left: -37px;
+}
+
+
+.menu--open{
+    display: flex !important;
+}

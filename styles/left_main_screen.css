@@ -1,0 +1,156 @@
+
+#left-main-screen{
+
+
+} 
+
+#left-main-screen-container{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+    overflow: scroll;
+    height: 100%;
+} 
+
+
+/*TODO: fix adaptive cards*/
+.container-desk-object{
+    max-width: 40vmin;
+    width: min-content;
+    min-width: 25vh;
+    max-height: 50vmin;
+    height: min-content;
+    min-height: 30vh;
+    background-color: var(--clear-bg-color);
+    border-radius: 40px;
+    margin: 10px;
+    outline: var(--accent-color-1) 3px solid;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 4fr max-content max-content max-content;
+    overflow: hidden;
+    transform: scale(1); 
+}
+
+
+@keyframes bounce {
+    0% {
+        transform: scale(1); 
+        filter: brightness(1.0);
+    }
+    50% {
+        transform: scale(1.06); 
+        filter: brightness(1.06);
+    }
+    100% {
+        transform: scale(1.05); 
+        filter: brightness(1.04);
+    }
+}
+
+.container-desk-object:hover{
+    filter: brightness(1.04);
+    animation-name: bounce;
+    animation-duration: 0.3s;
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.container-desk-object-img{
+    overflow: hidden;
+    outline: var(--accent-color-1) 2px solid;
+}
+
+.container-desk-object-img img{
+    height: 100%;
+    width: 100%;
+    object-fit:cover;
+}
+
+.container-desk-object-description{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 50% 50%;
+    background-color: var(--clear-bg-color);
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.container-desk-object-description div{
+    overflow: hidden;
+}
+
+.container-desk-object-description > :nth-child(1), :nth-child(3){
+    /* text-align: left;
+    margin-left: 10px; */
+    text-align: center;
+}
+
+.container-desk-object-description > :nth-child(2), :nth-child(4){
+    /* text-align: left; */
+    text-align: center;
+}
+
+/*TODO: fix adaptive font*/
+.container-desk-object-description div p{
+    margin: 0;
+    padding: 0;
+    font-size: 0.55em;
+    font-family: 'MacPawFixelDisplayMedium' , sans-serif;
+    color: var(--contrast-color-1);
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.container-desk-object-address{
+    text-align: center;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 0.75em;
+    font-family: 'MacPawFixelDisplayRegular' , sans-serif;
+    width: 100%;
+    margin: 0;
+    height: min-content;
+    border-bottom: var(--accent-color-1) 2px solid;
+    border-top: var(--accent-color-1) 2px solid;
+    background-color: var(--clear-bg-color);
+}
+
+/*TODO: fix adaptive font*/
+.container-desk-object-address p{
+    font-family: 'MacPawFixelDisplaySemiBold' , sans-serif;
+    margin: 0px;
+    padding: 0;
+    color: var(--contrast-color-1);
+    text-align: center;
+    margin-top: 4px;
+    margin-bottom: 3px;
+}
+
+.container-desk-object-price{
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.4em;
+    font-family: 'MacPawFixelDisplayBold' , sans-serif;
+    width: 100%;
+    margin:0;
+}
+
+/*TODO: fix adaptive font*/
+.container-desk-object-price p{
+    margin: auto;
+    color: var(--contrast-color-1);
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
