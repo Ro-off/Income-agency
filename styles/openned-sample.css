@@ -1,5 +1,6 @@
 .opened-sample-container{
     position: absolute;
+    visibility: hidden;
     top: 0;
     left: 0;
     right: 0;
@@ -10,6 +11,12 @@
     padding-left: 25px;
     padding-top: 8px;
     overflow-y: scroll;
+
+    transform: translateX(-10%);
+    opacity: 0;
+    transition-duration: 0.3s;
+    transition-property: transform, opacity,visibility;
+
 }
 
 .opened-sample-imgs{
@@ -119,3 +126,17 @@
     margin-top: 0;
 }
 
+/*TODO: make button adative and fixed to the right side of the parent*/
+#close-opened-sample{
+    position:fixed;
+    top: 20px;
+    right: 10px;
+    z-index: 100;
+}
+
+.opened-sample-container--active{
+    /* display: block !important; */
+    transform: translateY(0%) !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
