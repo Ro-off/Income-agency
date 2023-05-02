@@ -33,6 +33,7 @@
     font-family: 'MacPawFixelDisplaySemiBold' , sans-serif;
     margin-bottom: 0;
     line-height: 1em;
+    color: var(--contrast-color-2);
 }
 
 .opened-sample-price-full::after{
@@ -55,6 +56,45 @@
     text-align: left;
     font-family: 'MacPawFixelDisplayLight' , sans-serif;
     margin-top: 30px;
+    color: var(--contrast-color-2);
+
+}
+
+.opened-sample-details-container-right{
+    display: grid;
+}
+
+.opened-sample-details-table{
+    height: max-content;
+    width: auto;
+    /* background-color: royalblue; */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    justify-self: center;
+    align-self: center;
+    font-size: 0.9em;
+}
+
+.opened-sample-details-table p{
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 0;
+    text-justify: auto;
+    line-height: 1em;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-family: 'MacPawFixelDisplayRegular' , sans-serif;
+}
+
+.opened-sample-details-table :nth-child(odd){
+    text-align: right;
+    border-right: 1px solid var(--accent-color-2) ;
+}
+
+.opened-sample-details-table :nth-child(even){
+    text-align: left;
+    /* border-left: 1px solid var(--accent-color-2) ; */
 }
 
 .opened-sample-description{
@@ -63,5 +103,19 @@
     /* background-color: royalblue; */
     text-align: left;
     margin-top: 50px;
+    margin-bottom: 30px;
+}
+
+.opened-sample-description h1{
+     
+   font-family: 'MacPawFixelDisplayLight' , sans-serif;
+    color: var(--contrast-color-2);
+    margin-bottom: 0;
+}
+
+.opened-sample-description p{
+    font-family: 'MacPawFixelDisplayRegular' , sans-serif;
+    color: var(--contrast-color-2);
+    margin-top: 0;
 }
 
