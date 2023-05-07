@@ -11,19 +11,32 @@
     padding-left: 25px;
     padding-top: 8px;
     overflow-y: scroll;
-
     transform: translateX(-10%);
     opacity: 0;
     transition-duration: 0.3s;
     transition-property: transform, opacity,visibility;
-
 }
 
 .opened-sample-imgs{
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 100%;
     height: 60%;
     width: auto;
     /* background-color: firebrick; */
     justify-self: center;
+    margin-top: 30px;
+    
+}
+
+.opened-sample-imgs img{
+    width: 95%;
+    /* width: auto; */
+    object-fit: contain;
+    border-radius: 30px;
+    justify-self: center;
+    align-self: center;
+    outline: var(--accent-color-1) 4px solid;
 }
 
 .opened-sample-details{
@@ -128,11 +141,11 @@
 
 /*TODO: make button adative and fixed to the right side of the parent*/
 #close-opened-sample{
-    position:fixed;
-    top: 20px;
+    position: fixed;
+    top: 9px;
     right: 10px;
-    z-index: 100;
-}
+    /* z-index: 100; */
+} 
 
 .opened-sample-container--active{
     /* display: block !important; */
@@ -140,3 +153,9 @@
     opacity: 1 !important;
     visibility: visible !important;
 }
+
+/* .opened-sample-container--active ::after{
+    content: "  <nav class="close-button" id="close-opened-sample">
+    <i class="fa-solid fa-xmark"></i>
+</nav>";
+} */
