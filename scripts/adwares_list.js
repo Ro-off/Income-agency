@@ -1,5 +1,6 @@
 import { makeSampleOpenedAndFillItWithData } from "./opened-sample.js";
 import { geocode, createMarker, map } from "./map.js";
+import * as getAdwares from "./getAdwares.js";
 
 
 function addAdwareToPage(Adware){
@@ -22,10 +23,29 @@ function addAdwareToPage(Adware){
     <div class="container-desk-object-price">
         <p>${Adware.attributes.price}$</p>
     </div>`;
-    AdwareElement.addEventListener('click', () => makeSampleOpenedAndFillItWithData(Adware));
+    AdwareElement.addEventListener('click', () => makeSampleOpenedAndFillItWithData(Adware.id));
     adwaresList.appendChild(AdwareElement);
 }
+createListenerWhenUserReachScrollBottom();
 
+function createListenerWhenUserReachScrollBottom() {
+        console.log('createListenerWhenUserReachScrollBottom');
+        const offset = 0;
+
+        let adwares_list_container = document.querySelector('#left-main-screen-container');
+        adwares_list_container.addEventListener('scroll', () => {
+                if (adwares_list_container.scrollTop >= adwares_list_container.scrollHeight - adwares_list_container.clientHeight - offset) {
+                console.log('scrollTop: ', adwares_list_container.scrollTop);
+                console.log('scrollHeight - clientHeight: ', adwares_list_container.scrollHeight - adwares_list_container.clientHeight);
+                console.log('scrollHeight: ', adwares_list_container.scrollHeight);
+                console.log('clientHeight: ', adwares_list_container.clientHeight);
+                console.log('offset: ', offset);
+                console.log('   ');
+                getAdwares.addContentOnPage();
+            }
+        });
+    }
+  
 
 
 

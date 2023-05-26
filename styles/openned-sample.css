@@ -40,21 +40,30 @@
     outline: var(--accent-color-1) 4px solid;
 }
 
-#opened-sample-prewiev-imgs{
+#opened-sample-preview-imgs{
   display: flex;
   flex-direction: row;
   height: 100px;
   margin-top: 20px;
   width: auto;
-  overflow: hidden;
+  overflow-x: scroll;
   gap: 25px;
   align-items: center;
   padding: 0 20px;
   transition-property: scroll-behavior;
   transition-duration: 0.3s;
   scroll-behavior: smooth;
-
+  /* hide scrollbar */
+  scrollbar-width: none;
+  -ms-overflow-style: none;
 }
+
+#opened-sample-preview-imgs::-webkit-scrollbar {
+  display: none;
+}
+
+
+
 
 .opened-sample-img-move{
   display: flex;
@@ -78,7 +87,7 @@
 }
 
 
-.opened-sample-prewiev-img-container{
+.opened-sample-preview-img-container{
   height: max-content;
   cursor: pointer;
 
@@ -87,7 +96,7 @@
 
 
 
-#opened-sample-prewiev-imgs img{
+#opened-sample-preview-imgs img{
   object-fit: cover;
   outline: var(--accent-color-1) 3px solid;
   border-radius: 20px;
@@ -99,13 +108,13 @@
 
 }
 
-#opened-sample-prewiev-imgs img:hover{
+#opened-sample-preview-imgs img:hover{
   transform: scale(1.1);
   outline: var(--accent-color-1) 3px solid;
   filter: brightness(1.05);
 }
 
-.opened-sample-prewiev-img-container-is-active img{
+.opened-sample-preview-img-container-is-active img{
   transform: scale(1.2)!important;
   outline: var(--accent-color-1) 3px solid !important;
   filter: brightness(1.05) !important;
@@ -133,7 +142,7 @@
 
 .opened-sample-price-per-meter{
     font-size: 1.5em;
-    font-family: 'MacPawFixelDisplaylight' , sans-serif;
+    font-family: 'MacPawFixelDisplayLight' , sans-serif;
     margin-top: 0;
     color: var(--contrast-color-1);
 }
@@ -185,13 +194,11 @@
 
 .opened-sample-details-table :nth-child(even){
     text-align: left;
-    /* border-left: 1px solid var(--accent-color-2) ; */
 }
 
 .opened-sample-description{
     height: max-content;
     width: auto;
-    /* background-color: royalblue; */
     text-align: left;
     margin-top: 50px;
     margin-bottom: 30px;
@@ -208,9 +215,14 @@
     font-family: 'MacPawFixelDisplayRegular' , sans-serif;
     color: var(--contrast-color-2);
     margin-top: 0;
-}
+    width: 100%;
+    text-align: justify;
+    line-height: 1.5em;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
 
-/*TODO: make button adative and fixed to the right side of the parent*/
+/*TODO: make button adaptive and fixed to the right side of the parent*/
 #close-opened-sample{
     position: fixed;
     top: 9px;

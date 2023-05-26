@@ -31,7 +31,7 @@ header{
     object-fit: contain;
 }
 
-/*TODO: make name more adaptive and less shitcoded*/
+
 .name{
     color: var(--accent-color-1);
     font-size: 2.0em;
@@ -102,9 +102,7 @@ header{
     /* border-left: var(--clear-bg-color) 6px solid; */
 }
 
-.container-call-sample a:hover {
-  /*! transform: translateX(-3px) */
-}
+
 
 .container-call-sample p{
 color: var(--contrast-color-1);

@@ -1,5 +1,6 @@
 // import { map } from './map.js';
 
+import { getSingleAdware } from './getAdwares.js';
 import * as map from './map.js';
 
 function createListenersForButtons() {
@@ -23,11 +24,9 @@ function closeMenu(){
 
 function createListenersForNextBackButtons(){
   const nextButton = document.querySelector("#opened-sample-next");
-  console.log(nextButton);
   const backButton = document.querySelector("#opened-sample-back");
 
   nextButton.addEventListener('click', nextImage);
-
   backButton.addEventListener('click', backImage);
 }
 
@@ -53,40 +52,40 @@ function backImage(){
   }
 }
 
-function makeSampleOpenedAndFillItWithData(adwert){
+async function makeSampleOpenedAndFillItWithData(id){
+  const adware = await getSingleAdware(id);
   const opened_sample_container = document.querySelector('.opened-sample-container');
   opened_sample_container.classList.add('opened-sample-container--active');
-  fillImageScroll(adwert);
-  document.querySelector('.opened-sample-price-full').innerHTML = adwert.attributes.price;
-  document.querySelector('.opened-sample-price-per-meter').innerHTML = adwert.attributes.price / 40;
-  document.querySelector('.opened-sample-address').innerHTML = adwert.attributes.street_address;
+  fillImageScroll(adware);
+  document.querySelector('.opened-sample-price-full').innerHTML = adware.attributes.price;
+  document.querySelector('.opened-sample-price-per-meter').innerHTML = adware.attributes.price / 40;
+  document.querySelector('.opened-sample-address').innerHTML = adware.attributes.street_address;
   document.querySelector('.opened-sample-details-table').innerHTML =`
-  <p>${adwert.attributes.rooms} кімнати</p>
-  <p>${adwert.attributes.flour} поверх</p>
-  <p>${adwert.attributes.total_area} / ${adwert.attributes.living_area}</p>
-  <p>${adwert.attributes.heating_type} опалення</p>
-  <p>${adwert.attributes.building_technology_type} будинок</p>
-  <p>${adwert.attributes.type_of_finish_apartment}</p>
+  <p>${adware.attributes.rooms} кімнати</p>
+  <p>${adware.attributes.flour} поверх</p>
+  <p>${adware.attributes.total_area} / ${adware.attributes.living_area}</p>
+  <p>${adware.attributes.heating_type} опалення</p>
+  <p>${adware.attributes.building_technology_type} будинок</p>
+  <p>${adware.attributes.type_of_finish_apartment}</p>
   `;
-  document.querySelector('.opened-sample-description p').innerHTML = adwert.attributes.about;
+  document.querySelector('.opened-sample-description p').innerHTML = adware.attributes.about;
 }
 
 
 
-function fillImageScroll(adwert) {
-  const images = adwert.attributes?.photos;
+function fillImageScroll(adware) {
+  const images = adware.attributes?.photos;
   imagesData = images;
-  console.log(images);
   imagesData.currentIndex = 0;
   const mainImg = document.querySelector('#opened-sample-main-img');
-  const imgsPreview = document.querySelector('#opened-sample-prewiev-imgs');
+  const imgsPreview = document.querySelector('#opened-sample-preview-imgs');
   if (images?.data && Array.isArray(images.data)) {
     imgsPreview.innerHTML = '';
     images.data.forEach((img, index) => {
       const imgUrl = img?.attributes?.formats["small"]?.url;
       if (imgUrl) { // check if imgUrl exists before creating the imgContainer
         const imgContainer = document.createElement('div');
-        imgContainer.classList.add('opened-sample-prewiev-img-container');
+        imgContainer.classList.add('opened-sample-preview-img-container');
         imgContainer.innerHTML = `<img src="${imgUrl}" alt="interiorPhoto">`;
         imgContainer.addEventListener('click', () => {
           selectImage( img, index);
@@ -100,8 +99,12 @@ function fillImageScroll(adwert) {
 
 
 function selectImage( img, index) {
-  const imgsPreview = document.querySelector('#opened-sample-prewiev-imgs');
+  const imgsPreview = document.querySelector('#opened-sample-preview-imgs');
+  const imgsPreviewWidth = imgsPreview.offsetWidth;
+  const imgWidth = imgsPreview.children[index].children[0].offsetWidth;
   const imgContainer = imgsPreview.children[index];
+  const imgContainerGap = Number(window.getComputedStyle(imgsPreview).getPropertyValue('gap').split('px')[0]);
+  console.log(imgWidth + imgContainerGap);
   const mainImg = document.querySelector('#opened-sample-main-img');
   addHighlightingToCurrentPreviewImg(imgContainer);
   const largeImgUrl = img?.attributes?.formats["large"]?.url;
@@ -110,27 +113,22 @@ function selectImage( img, index) {
   if (largeImgUrl || mediumImgUrl || smallImgUrl) imagesData.currentIndex = index;
   if (largeImgUrl) { // check if largeImgUrl exists before setting the mainImg src
     mainImg.src = largeImgUrl;
-    imgsPreview.scrollLeft = index * 100;
-    console.log('largeImgUrl', largeImgUrl);
   } else if (mediumImgUrl) {
     mainImg.src = mediumImgUrl;
-    imgsPreview.scrollLeft = index * 100;
-    console.log('mediumImgUrl', mediumImgUrl);
+    console.warn('Large image not found, medium image used instead');
   } else if (smallImgUrl) {
     mainImg.src = smallImgUrl;
-    imgsPreview.scrollLeft = index * 100;
-    console.log('smallImgUrl', smallImgUrl);
+    console.warn('Large and medium images not found, small image used instead');
   }
+  imgsPreview.scrollLeft = index * (imgWidth + imgContainerGap) - (imgsPreviewWidth - imgWidth) / 2;
 }
 
 function addHighlightingToCurrentPreviewImg(elem) {
-  const oldElem = document.querySelector('.opened-sample-prewiev-img-container-is-active');
+  const oldElem = document.querySelector('.opened-sample-preview-img-container-is-active');
   if (oldElem) {
-    oldElem.classList.remove('opened-sample-prewiev-img-container-is-active');
-    console.log('deleted');
+    oldElem.classList.remove('opened-sample-preview-img-container-is-active');
   }
-  elem.classList.add('opened-sample-prewiev-img-container-is-active');
-  console.log('added');
+  elem.classList.add('opened-sample-preview-img-container-is-active');
 }
 
 
