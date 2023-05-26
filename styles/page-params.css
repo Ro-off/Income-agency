@@ -26,7 +26,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    
+
 }
 
 
@@ -34,7 +34,7 @@
     filter: brightness(1.1);
 }
 
-.close-button{
+.round-button{
     border-radius: 50px;
     font-size: 1.6em;
     outline: var(--accent-color-1) 4px solid;
@@ -55,12 +55,12 @@
     user-select: none;
 }
 
-.close-button:hover{
+.round-button:hover{
     filter: brightness(1.03);
     transform: rotate(360deg);
 }
 
-.close-button i{
+.round-button i{
     color: var(--accent-color-1);
     -webkit-text-stroke: 0.5px var(--accent-color-2);
 }
@@ -109,3 +109,31 @@
     scrollbar-thumb:hover {
       background-color: var(--accent-color-2);
     }
+
+    @keyframes bounce {
+      0% {
+          transform: scale(1);
+          filter: brightness(1.0);
+      }
+      50% {
+          transform: scale(1.06);
+          filter: brightness(1.06);
+      }
+      100% {
+          transform: scale(1.05);
+          filter: brightness(1.04);
+      }
+  }
+
+  @media all and (orientation: portrait)
+{
+
+  ::-webkit-scrollbar {
+    display: none;
+    }
+
+    * {
+      scrollbar-display: none;
+    }
+
+}

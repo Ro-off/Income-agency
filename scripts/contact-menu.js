@@ -1,7 +1,6 @@
 function createListenersForButtons() {
     createListenerForOpenMenu();
     createListenerForCloseMenu();
-    //!createListenersToOpenNumberLink();
     coloringButtonIntoIconColorOnHover();
 }
 
@@ -10,8 +9,10 @@ function createListenerForOpenMenu() {
   const button = document.querySelector('#Contact-button');
   const openMenu = () => {
     menu.classList.add('contact-menu--open');
+    console.log('openedMenu');
   };
   button.addEventListener('click', openMenu);
+  console.log('createdListenerForOpenMenu');
 }
 
 function createListenerForCloseMenu() {
@@ -23,6 +24,7 @@ function createListenerForCloseMenu() {
     };
     button.addEventListener('click', closeMenu);
     main.addEventListener('click', closeMenu);
+    console.log('createdListenerForCloseMenu');
 }
 
 function coloringButtonIntoIconColorOnHover() {
@@ -33,7 +35,7 @@ function coloringButtonIntoIconColorOnHover() {
         const buttonIcon = button.firstElementChild.firstElementChild;
       const buttonColor = getComputedStyle(buttonIcon).getPropertyValue('background-color');
       console.log(buttonColor);
-      
+
 
 
       const newColor = lightenColor(buttonColor, 75);
@@ -42,7 +44,7 @@ function coloringButtonIntoIconColorOnHover() {
 
 
 function lightenColor(color, percent) {
-  const rgb = color.replace(/\s/g, '').match(/^rgb\((\d+),(\d+),(\d+)\)$/); 
+  const rgb = color.replace(/\s/g, '').match(/^rgb\((\d+),(\d+),(\d+)\)$/);
   const r = parseInt(rgb[1]);
   const g = parseInt(rgb[2]);
   const b = parseInt(rgb[3]);
@@ -66,27 +68,3 @@ function lightenColor(color, percent) {
 }
 
 export { createListenersForButtons };
-
- //! Deprecated, will be imbedded in html
-// function createListenersToOpenNumberLink() {
-//     const number = document.querySelectorAll('.number');
-//     console.log(number);
-//     const viber = document.querySelectorAll('.viber');
-//     const telegram = document.querySelectorAll('.telegram');
-//     const openNumber = () => {
-//         window.open(`tel:${phoneNumber}`);
-//     };
-//     const openViber = () => {
-//         window.open(viberLink);
-//     };
-//     const openTelegram = () => {
-//         window.open(telegramLink);
-//     };
-//     number.forEach(elem => { elem.addEventListener('click', openNumber)});
-//     viber.forEach(elem => { elem.addEventListener('click', openViber)});
-//     telegram.forEach(elem => { elem.addEventListener('click', openTelegram)});
-// }
-// const phoneNumber = "380951737461"
-// const viberLink = `viber://chat?number=${phoneNumber}`;
-// const telegramLink = `tg://resolve?domain=${phoneNumber}`;
-
