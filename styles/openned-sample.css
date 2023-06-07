@@ -1,6 +1,6 @@
 .opened-sample-container{
     position: absolute;
-    visibility: hidden;
+
     top: 8vh;
     border-radius: 50px 0 0 0;
     left: 0;
@@ -12,6 +12,7 @@
     padding-left: 25px;
     padding-top: 8px;
     overflow-y: scroll;
+    visibility: hidden;
     transform: translateX(-10%);
     opacity: 0;
     transition-duration: 0.3s;
@@ -223,11 +224,25 @@
   }
 
 /*TODO: make button adaptive and fixed to the right side of the parent*/
-#close-opened-sample{
-    position: fixed;
-    top: 9px;
-    right: 10px;
-    /* z-index: 100; */
+.opened-sample-overlay nav{
+ margin: 0 40px;
+}
+
+.opened-sample-overlay{
+  height: 40px;
+  width: 50%;
+  position: absolute;
+  top: calc(20px + 8vh);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+
+  visibility: hidden;
+  transform: translateX(-10%);
+  opacity: 0;
+  transition-duration: 0.3s;
+  transition-property: transform, opacity,visibility;
 }
 
 .opened-sample-container--active{
@@ -236,6 +251,147 @@
     opacity: 1 ;
     visibility: visible !important;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.contact-menu--open{
+  transform: translateY(0%) !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#container-call{
+  position: absolute;
+  display: flex;
+  visibility: hidden;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--accent-bg-color);
+  border-radius: 30px;
+  outline: var(--accent-color-1) 4px solid;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  top: 8vh;
+  left: 28px;
+  z-index: 10;
+
+  transform: translateY(-10%);
+  opacity: 0;
+  transition-duration: 0.3s;
+  transition-property: transform, opacity,visibility;
+}
+
+.container-call-sample{
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  background-color: var(--clear-bg-color);
+  border-radius: 50px;
+  outline: var(--clear-bg-color) 6px solid;
+  margin-top: 8px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.container-call-sample a{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: row;
+  transition: 0.2s;
+  transition-property: background-color, transform;
+  /* outline: var(--clear-bg-color) 6px solid; */
+  /* border-left: var(--clear-bg-color) 6px solid; */
+}
+
+
+
+.container-call-sample p{
+color: var(--contrast-color-1);
+margin-left: 20px;
+margin-right: 20px;
+margin-top: 3px;
+margin-bottom: 1px;
+font-size: 1em;
+width: 100%;
+text-align: center;
+/* margin: 10px; */
+}
+
+.container-call-sample i{
+  font-size: 1.3em;
+  padding: 0.3em;
+ }
+
+.container-call-sample :nth-child(1){
+  border-radius: 50px;
+  /* background-color: rgb(179, 235, 122); */
+  color: var(--clear-bg-color);
+}
+
+.container-call-sample > :nth-child(2){
+  border-radius: 0px 50px 50px 0px;
+  padding-left: 0.6em;
+  border-left: 1px solid var(--contrast-color-1);
+  color: var(--contrast-color-1);
+  z-index: 2;
+  /* background-color: var(--clear-bg-color); */
+
+  /*! for test, can be broken */
+  /* margin-left: -10px; */
+}
+
+#container-call .container-call-sample .fa-phone{
+  background-color: var(--call-button-color);
+}
+
+#container-call .container-call-sample .fa-viber{
+  background-color: var(--viber-button-color);
+}
+
+#container-call .container-call-sample .fa-telegram{
+  background-color: var(--telegram-button-color);
+}
+
+#container-call .round-button{
+  position: absolute;
+  bottom: -37px;
+  left: -37px;
+}
+
+
+.menu--open{
+  display: flex !important;
+}
+
+
+
+
+
+
+
 
 @media all and (orientation: portrait)
 {
@@ -280,4 +436,29 @@
   height: relative;
 }
 
+#container-call{
+  top: 10vh;
+  right: 20px;
+  left: 20px;
+  height: 20vh;
 }
+
+#container-call .round-button{
+position: absolute;
+top: calc(20vh + 30px);
+left: 0;
+right: 0;
+margin-left: auto;
+margin-right: auto;
+width: 150px;
+}
+
+#container-call .round-button:hover{
+transform: scale(1.05);
+}
+
+}
+
+
+
+

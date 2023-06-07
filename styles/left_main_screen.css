@@ -10,8 +10,8 @@ opacity: 100;
     align-content: start;
     flex-direction: row;
     flex-wrap: wrap;
-    padding: 0px 20px;
-    overflow: scroll;
+    padding: 20 0px;
+    overflow-y: scroll;
     height: 100%;
 }
 

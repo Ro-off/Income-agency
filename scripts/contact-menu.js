@@ -6,9 +6,11 @@ function createListenersForButtons() {
 
 function createListenerForOpenMenu() {
   const menu = document.querySelector('#container-call');
-  const button = document.querySelector('#Contact-button');
+  const button = document.querySelector('#call-opened-sample');
+  console.log(button);
   const openMenu = () => {
     menu.classList.add('contact-menu--open');
+    console.log('open');
   };
   button.addEventListener('click', openMenu);
 }
@@ -16,12 +18,13 @@ function createListenerForOpenMenu() {
 function createListenerForCloseMenu() {
     const menu = document.querySelector('#container-call');
     const button = document.querySelector('#close-contact-menu');
-    const main = document.querySelector('main');
+    // const main = document.querySelector('main');
     const closeMenu = () => {
         menu.classList.remove('contact-menu--open');
+        console.log('close');
     };
     button.addEventListener('click', closeMenu);
-    main.addEventListener('click', closeMenu);
+    // main.addEventListener('click', closeMenu);
 }
 
 function coloringButtonIntoIconColorOnHover() {

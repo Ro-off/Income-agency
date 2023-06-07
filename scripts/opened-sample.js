@@ -18,7 +18,9 @@ function createListenerForCloseSamplePage() {
 
 function closeMenu(){
   const menu = document.querySelector('.opened-sample-container');
+  const buttonOverlay = document.querySelector('.opened-sample-overlay');
   menu.classList.remove('opened-sample-container--active');
+  buttonOverlay.classList.remove('opened-sample-container--active');
   map.restoreUserLastLocation();
 }
 
@@ -55,7 +57,11 @@ function backImage(){
 async function makeSampleOpenedAndFillItWithData(id){
   const adware = await getSingleAdware(id);
   const opened_sample_container = document.querySelector('.opened-sample-container');
+  const buttonOverlay = document.querySelector('.opened-sample-overlay');
+
   opened_sample_container.classList.add('opened-sample-container--active');
+  buttonOverlay.classList.add('opened-sample-container--active');
+  
   fillImageScroll(adware);
   document.querySelector('.opened-sample-price-full').innerHTML = adware.attributes.price;
   document.querySelector('.opened-sample-price-per-meter').innerHTML = adware.attributes.price / 40;

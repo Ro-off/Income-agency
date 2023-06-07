@@ -64,7 +64,7 @@ function createMarker (position, map, adware){
     content: priceTag,
   });
   marker.addEventListener("gmp-click", () => {
-    makeSampleOpenedAndFillItWithData(adware);
+    makeSampleOpenedAndFillItWithData(adware.id);
     setUserLastLocation();
     setCenterAndZoom(position, 15);
     mapSwitcher.openAdwares();
