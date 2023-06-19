@@ -4,22 +4,10 @@ import * as map from "./map.js";
 let server = "testddns34.asuscomm.com";
 let port = "1337";
 let collection = "adverts";
-//http://192.168.50.177:1337/api/adverts
 let adwaresUrl = "http://" + server + ":" + port + "/api/" + collection;
 let graphqlUrl = "http://" + server + ":" + port + "/graphql";
 let currentCard = 0;
 let cardLimit = 10;
-
-
-//timer for testing
-// setInterval(async function () {
-//     console.log("timer");
-//     console.log("currentCard: " + currentCard);
-//     console.log("cardLimit: " + cardLimit);
-//     await addContentOnPage();
-//     currentCard += cardLimit;
-// }, 5000);
-
 
 
 
@@ -27,8 +15,7 @@ async function addContentOnPage() {
 let adwares = await getLimitedAdwares(cardLimit, currentCard);
   for (const adware of adwares) {
     adwares_list.addAdwareToPage(adware);
-    // const geocodeResult = await map.geocode({address: adware.attributes.street_address + "Суми, Сумська область, Україна"});
-    // map.createMarker(geocodeResult, map.map, adware);
+
   }
 };
 
@@ -61,8 +48,7 @@ async function getAllMarkersData(){
                 }`,
             }),
         });
-        // const data = await response.json();
-        // return data.data;
+ 
         return response.json().then(response => { return response.data.adverts.data; })
     } catch (error) {
         console.error('Error:', error);
