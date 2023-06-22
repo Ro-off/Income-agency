@@ -66,7 +66,7 @@ function createMarker (position, map, adware){
   marker.addEventListener("gmp-click", () => {
     makeSampleOpenedAndFillItWithData(adware.id);
     setUserLastLocation();
-    setCenterAndZoom(position, 15);
+    setCenterAndZoom(position, 16);
     mapSwitcher.openAdwares();
   });
   return marker;
