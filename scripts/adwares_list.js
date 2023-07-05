@@ -7,9 +7,21 @@
     const adwaresList = document.querySelector('#left-main-screen-container');
             const AdwareElement = document.createElement('div');
             AdwareElement.classList.add('container-desk-object');
+
+            let imgSrc;
+            const mediumImgUrl = Adware?.attributes?.photos?.data[0]?.attributes?.formats?.["medium"]?.url;
+            const smallImgUrl = Adware?.attributes?.photos?.data[0]?.attributes?.formats?.["small"]?.url;
+             
+            if (mediumImgUrl) {
+                imgSrc = mediumImgUrl;
+            } else if (smallImgUrl) {
+                imgSrc = smallImgUrl;
+              console.warn('Medium image not found, small image used instead');
+            }
+
             AdwareElement.innerHTML =
             `<div class="container-desk-object-img">
-            <img src="${Adware.attributes.photos.data[0].attributes.formats["medium"].url}" alt="interiorPhoto">
+            <img src="${imgSrc}" alt="interiorPhoto">
         </div>
         <div class="container-desk-object-description">
             <div class="container-desk-object-description-1-1"><p>${Adware.attributes.rooms} кімнати</p></div>

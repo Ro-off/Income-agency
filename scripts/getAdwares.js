@@ -1,7 +1,8 @@
 import * as  adwares_list from "./adwares_list.js";
 import * as map from "./map.js";
 
-let server = "testddns34.asuscomm.com";
+let server = "localhost";
+// "testddns34.asuscomm.com"
 let port = "1337";
 let collection = "adverts";
 let adwaresUrl = "http://" + server + ":" + port + "/api/" + collection;

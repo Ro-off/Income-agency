@@ -107,9 +107,11 @@ function selectImage( img, index) {
   console.log(imgWidth + imgContainerGap);
   const mainImg = document.querySelector('#opened-sample-main-img');
   addHighlightingToCurrentPreviewImg(imgContainer);
-  const largeImgUrl = img?.attributes?.formats["large"]?.url;
-  const mediumImgUrl = img?.attributes?.formats["medium"]?.url;
-  const smallImgUrl = img?.attributes?.formats["small"]?.url;
+
+  const largeImgUrl = img?.attributes?.formats?.["large"]?.url;
+  const mediumImgUrl = img?.attributes?.formats?.["medium"]?.url;
+  const smallImgUrl = img?.attributes?.formats?.["small"]?.url;
+
   if (largeImgUrl || mediumImgUrl || smallImgUrl) imagesData.currentIndex = index;
   if (largeImgUrl) { // check if largeImgUrl exists before setting the mainImg src
     mainImg.src = largeImgUrl;
