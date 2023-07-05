@@ -1,13 +1,16 @@
 body{
     background-color: var(--clear-bg-color);
-    height: 100vh; 
-    /*block scroll bar*/
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     margin: 0;
-    overflow: hidden;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 8vh auto;
     font-family: 'MacPawFixelDisplayRegular' , sans-serif;
+    overflow: hidden;
+    position: fixed;
 }
 
 main{
@@ -18,5 +21,52 @@ main{
     grid-template-columns: 50% 50%;
     grid-template-rows: 100%;
     outline: var(--accent-color-1) 2px solid;
-    height: auto;
+
+    transition-property: all;
+    transition-duration: 0.5s;
+}
+
+.map-switcher{
+  display: none;
+  position: fixed;
+}
+
+
+.map-switcher-hide{
+  display: none !important;
+}
+
+
+#switch-to-map{
+  right: 20px;
+  bottom: 40px;
+  transition-property: transform;
+  transition-duration: 0.5s;
+}
+
+
+@media all and (orientation: portrait)
+{
+
+  #mobile-layout{
+    grid-template-columns: 100vw 0;
+    }
+
+    .main-active-map{
+      grid-template-columns: 0 100% !important;
+    }
+
+    .hide-on-mobile{
+      opacity: 0 !important;
+      transition-property: all;
+      transition-duration: 0.5s;
+      transform: translateX(-100%) !important;
+    }
+
+    .map-switcher{
+      display: flex;
+      height: 60px;
+      width: 60px;
+    }
+
 }
